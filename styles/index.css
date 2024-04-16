@@ -1,0 +1,71 @@
+body, ul {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    position: relative;
+    margin-top: 30px;
+}
+
+.navbar {
+    list-style: none;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.navbar li {
+    display: block;
+    padding: 10px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    display: block;
+}
+
+.navbar a:hover {
+    color: #ddd;
+}
+
+/* Toggle Button */
+.toggle-button {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    display: block;
+    cursor: pointer;
+}
+
+/* Hide toggle button on larger screens */
+@media (min-width: 768px) {
+    .toggle-button {
+        display: none;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .navbar li {
+        display: inline;
+        padding: 0 10px;
+    }
+}
+
+/* Hidden menu in mobile view */
+.navbar {
+    display: none;
+}
+
+/* Show menu when .active is added via JavaScript */
+.navbar.active {
+    display: block;
+}
