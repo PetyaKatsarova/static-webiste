@@ -4,12 +4,10 @@ body, header, main, footer {
     margin: 0;
     padding: 0;
     color: #523623;
-    /* color: orange; */
 }
 
 footer {
       color: #69691f;
-      text-align: center;
       font-weight: 300;
 }
 
@@ -19,14 +17,13 @@ footer {
     margin: 2em 0 0 3em;
 }
 
-.title {
+.title, nav ul, footer, #menuIcon {
     text-align: center;
 } 
 
 nav ul {
     list-style-type: none;
     padding: 0;
-    text-align: center;
 }
 
 nav ul li {
@@ -34,26 +31,11 @@ nav ul li {
     margin-right: 10px;
 }
 
-/* Responsive design adjustments */
-@media (min-width: 600px) {
-    nav ul li {
-        margin-right: 20px;
-    }
-}
-
-/* Additional styles for larger screens */
-@media (min-width: 800px) {
-    nav ul li {
-        display: inline;
-    }
-}
-
 /* mobile nav bar lines */
 
 #menuIcon {
     cursor: pointer;
     font-size: 30px;
-    text-align: center;
 }
 
 #menuItems {
@@ -61,14 +43,13 @@ nav ul li {
     padding: 0;
     margin: 0;
     position: absolute;
-    width: 100%;
-    text-align: left;
-    display: none;
+    width: 50%;
+    text-align: center;
+    display: block;
 }
 
 #menuItems li {
     padding: 10px;
-    border-bottom: 1px solid #fff;
     font-size: 24px;
 }
 
@@ -86,9 +67,22 @@ nav ul li {
     display: none;
 }
 
-/* When menuItems is not hidden */
 .show {
     display: block;
+}
+
+/* Responsive design adjustments */
+@media (min-width: 600px) {
+    nav ul li {
+        margin-right: 20px;
+    }
+}
+
+/* Additional styles for larger screens */
+@media (min-width: 800px) {
+    nav ul li {
+        display: inline;
+    }
 }
 
 /* from tablet and laptop */
@@ -98,7 +92,7 @@ nav ul li {
         font-size: 16px; /* Larger font size for tablet */
     }
 
-    #menuIcon {
+    #menuIcon, #closeIcon{
         display: none; /* Hide hamburger menu on tablet size */
     }
 
