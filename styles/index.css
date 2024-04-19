@@ -1,71 +1,135 @@
-body, ul {
+/* Basic styles with a mobile-first approach */
+body, header, main, footer {
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    color: #523623;
+    /* color: orange; */
 }
 
-header {
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
-    position: relative;
-    margin-top: 30px;
+footer {
+      color: #69691f;
+      text-align: center;
+      font-weight: 300;
 }
 
-.navbar {
-    list-style: none;
-    display: block;
-    width: 100%;
+.logo {
+    width: 6em;
+    height: auto;
+    margin: 2em 0 0 3em;
+}
+
+.title {
+    text-align: center;
+} 
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
     text-align: center;
 }
 
-.navbar li {
-    display: block;
-    padding: 10px;
+nav ul li {
+    display: inline-block;
+    margin-right: 10px;
 }
 
-.navbar a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    display: block;
-}
-
-.navbar a:hover {
-    color: #ddd;
-}
-
-/* Toggle Button */
-.toggle-button {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    display: block;
-    cursor: pointer;
-}
-
-/* Hide toggle button on larger screens */
-@media (min-width: 768px) {
-    .toggle-button {
-        display: none;
+/* Responsive design adjustments */
+@media (min-width: 600px) {
+    nav ul li {
+        margin-right: 20px;
     }
+}
 
-    .navbar {
-        display: flex;
-        justify-content: flex-end;
-    }
-
-    .navbar li {
+/* Additional styles for larger screens */
+@media (min-width: 800px) {
+    nav ul li {
         display: inline;
-        padding: 0 10px;
     }
 }
 
-/* Hidden menu in mobile view */
-.navbar {
+/* mobile nav bar lines */
+
+#menuIcon {
+    cursor: pointer;
+    font-size: 30px;
+    text-align: center;
+}
+
+#menuItems {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    text-align: left;
     display: none;
 }
 
-/* Show menu when .active is added via JavaScript */
-.navbar.active {
+#menuItems li {
+    padding: 10px;
+    border-bottom: 1px solid #fff;
+    font-size: 24px;
+}
+
+#menuItems li a {
+    text-decoration: none;
+}
+
+#menuItems li:first-child {
+    border: none;
+    text-align: right;
+    font-size: 30px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* When menuItems is not hidden */
+.show {
     display: block;
 }
+
+/* from tablet and laptop */
+@media (min-width: 768px) {
+    /* Your CSS rules for tablets */
+    body {
+        font-size: 16px; /* Larger font size for tablet */
+    }
+
+    #menuIcon {
+        display: none; /* Hide hamburger menu on tablet size */
+    }
+
+    #menuItems {
+        display: block; /* Always show menu items inline */
+    }
+
+    #menuItems li {
+        display: inline-block; /* Display menu items in a row */
+        padding: 10px 15px; /* Adjust padding for tablet size */
+    }
+
+    #menuItems li a {
+        padding: 10px; /* Padding around links for easier clicking */
+    }
+
+    /* Additional styles can be added here */
+}
+
+
+/*  laptop only */
+@media (min-width: 992px) {
+    /* Your CSS rules for desktop */
+    body {
+        font-size: 18px; /* Larger font size for desktop */
+    }
+
+    #menuItems li {
+        padding: 10px 20px; /* Adjust padding for desktop size */
+    }
+
+    /* Additional styles can be added here */
+}
+
