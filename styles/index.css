@@ -6,9 +6,13 @@ body, header, main, footer {
     color: #523623;
 }
 
+main {
+    padding: 1em 2em;
+}
+
 footer {
-      color: #69691f;
-      font-weight: 300;
+    color: #69691f;
+    font-weight: 300;
 }
 
 .logo {
@@ -19,7 +23,7 @@ footer {
 
 .title, nav ul, footer, #menuIcon {
     text-align: center;
-} 
+}
 
 nav ul {
     list-style-type: none;
@@ -29,11 +33,14 @@ nav ul {
 nav ul li {
     display: block;
     margin-right: 10px;
-    color: #523623;
 }
 
-/* mobile nav bar lines */
+nav ul li a {
+    color: #523623;
+    text-decoration: none;
+}
 
+/* Mobile nav bar icon */
 #menuIcon {
     cursor: pointer;
     font-size: 30px;
@@ -51,110 +58,92 @@ nav ul li {
     font-size: 24px;
 }
 
-#menuItems li a {
-    text-decoration: none;
-}
-
 .show {
-    /* background-color: antiquewhite; */
     background-color: white;
-    font-size: medium;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: small;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
-    color: orange;
+    color: #523623;
+    width: 100%;
 }
 
+/* Styles for max-width 767px to highlight active links on hover */
+@media (max-width: 599px) {
+    .small-screen .active {
+        display: inline-block;
+        width: 100%;
+        background-color: #523623;
+        color: white;
+    }
+}
 
-/* Responsive design adjustments for tablet and laptop*/
+/* Responsive design adjustments for tablet and laptop */
 @media (min-width: 600px) {
     nav {
-        display: flex; /* Use flexbox for flexible layout */
-        align-items: center; /* Vertically center align items */
-        justify-content: start; /* Align items to the start */
-        padding-left: 10%; /* Add padding to the left to push it a bit to the left */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
     }
 
     #menuItems {
-        display: flex; /* Display menu items inline-flexibly */
-        align-items: center; /* Center-align the items vertically */
-        justify-content: flex-start; /* Start alignment of the navigation links */
-        width: 100%; /* Full width to spread out the nav items */
-        margin: 0; /* Remove margin for clean alignment */
-        padding: 0; /* Remove padding for clean alignment */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+        margin-left: 5%;
+        padding: 0;
     }
 
     #menuItems li {
-        margin-right: 20px; /* Space between each menu item */
+        margin: 0 20px;
+        display: inline-block;
     }
 
     #menuItems li a {
-        padding: 10px 15px; /* Sufficient padding for clickable area */
-        font-weight: bold; /* Make text bold to stand out */
+        padding: 10px 15px;
+        font-weight: bold;
+        position: relative;
+        overflow: hidden;
+        transition: color 0.3s;
     }
 
-    /* Hide the menu icon since the menu is always visible */
-    #menuIcon {
-        display: none;
-    }
-
-    /* ON HOVER NICE UPPER AND LOWER LINES */
-    #menuItems li a {
-        position: relative; /* Essential for positioning pseudo-elements */
-        overflow: hidden; /* Prevents pseudo-elements from extending beyond the link's boundaries */
-        transition: color 0.3s; /* Smooth transition for text color changes */
-    }
-    
     #menuItems li a::before,
     #menuItems li a::after {
         content: '';
         position: absolute;
         left: 0;
         right: 0;
-        height: 2px; /* Height of the decorative strips */
-        background-color: #523623; /* Color of the strips, adjust as needed */
-        transition: transform 0.3s; /* Smooth transformation transition */
-        transform: scaleX(0); /* Start with no visible strip */
-        transform-origin: left; /* Transformation begins from the left */
+        height: 2px;
+        background-color: #523623;
+        transform: scaleX(0);
+        transition: transform 0.3s;
+        transform-origin: left;
     }
-    
+
     #menuItems li a::before {
-        top: 0; /* Positioned at the top of the link */
+        top: 0;
     }
-    
+
     #menuItems li a::after {
-        bottom: 0; /* Positioned at the bottom of the link */
+        bottom: 0;
     }
-    
+
+    #menuItems li a.active::before,
+    #menuItems li a.active::after,
     #menuItems li a:hover::before,
     #menuItems li a:hover::after {
-        transform: scaleX(1); /* Expand the strip across the full element width on hover */
+        transform: scaleX(1);
     }
-    
+
+    #menuIcon {
+        display: none;
+    }
 }
 
-/* from tablet and laptop */
+/* Additional styles for larger screens */
 @media (min-width: 768px) {
-    /* Your CSS rules for tablets */
     body {
-        font-size: 16px; /* Larger font size for tablet */
+        font-size: 16px;
     }
-
-    #menuIcon, #closeIcon{
-        display: none; /* Hide hamburger menu on tablet size */
-    }
-
-    #menuItems {
-        display: block; /* Always show menu items inline */
-    }
-
-    #menuItems li {
-        display: inline-block; /* Display menu items in a row */
-        padding: 10px 15px; /* Adjust padding for tablet size */
-    }
-
-    #menuItems li a {
-        padding: 10px; /* Padding around links for easier clicking */
-    }
-
-    /* Additional styles can be added here */
 }
