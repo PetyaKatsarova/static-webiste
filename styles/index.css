@@ -56,18 +56,79 @@ nav ul li {
 }
 
 .show {
-    background-color: antiquewhite;
+    /* background-color: antiquewhite; */
+    background-color: white;
     font-size: medium;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-align: center;
     
 }
 
-/* Responsive design adjustments */
+/* Responsive design adjustments for tablet and laptop*/
 @media (min-width: 600px) {
-    nav ul li {
-        margin-right: 20px;
+    nav {
+        display: flex; /* Use flexbox for flexible layout */
+        align-items: center; /* Vertically center align items */
+        justify-content: start; /* Align items to the start */
+        padding-left: 10%; /* Add padding to the left to push it a bit to the left */
     }
+
+    #menuItems {
+        display: flex; /* Display menu items inline-flexibly */
+        align-items: center; /* Center-align the items vertically */
+        justify-content: flex-start; /* Start alignment of the navigation links */
+        width: 100%; /* Full width to spread out the nav items */
+        margin: 0; /* Remove margin for clean alignment */
+        padding: 0; /* Remove padding for clean alignment */
+    }
+
+    #menuItems li {
+        margin-right: 20px; /* Space between each menu item */
+    }
+
+    #menuItems li a {
+        padding: 10px 15px; /* Sufficient padding for clickable area */
+        font-weight: bold; /* Make text bold to stand out */
+    }
+
+    /* Hide the menu icon since the menu is always visible */
+    #menuIcon {
+        display: none;
+    }
+
+    /* ON HOVER NICE UPPER AND LOWER LINES */
+    #menuItems li a {
+        position: relative; /* Essential for positioning pseudo-elements */
+        overflow: hidden; /* Prevents pseudo-elements from extending beyond the link's boundaries */
+        transition: color 0.3s; /* Smooth transition for text color changes */
+    }
+    
+    #menuItems li a::before,
+    #menuItems li a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 2px; /* Height of the decorative strips */
+        background-color: #523623; /* Color of the strips, adjust as needed */
+        transition: transform 0.3s; /* Smooth transformation transition */
+        transform: scaleX(0); /* Start with no visible strip */
+        transform-origin: left; /* Transformation begins from the left */
+    }
+    
+    #menuItems li a::before {
+        top: 0; /* Positioned at the top of the link */
+    }
+    
+    #menuItems li a::after {
+        bottom: 0; /* Positioned at the bottom of the link */
+    }
+    
+    #menuItems li a:hover::before,
+    #menuItems li a:hover::after {
+        transform: scaleX(1); /* Expand the strip across the full element width on hover */
+    }
+    
 }
 
 /* from tablet and laptop */
