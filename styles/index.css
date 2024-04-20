@@ -27,7 +27,7 @@ nav ul {
 }
 
 nav ul li {
-    display: inline-block;
+    display: block;
     margin-right: 10px;
 }
 
@@ -42,10 +42,8 @@ nav ul li {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    position: absolute;
-    width: 50%;
-    text-align: center;
-    display: block;
+    /* position: absolute; */
+    display: none;
 }
 
 #menuItems li {
@@ -57,31 +55,18 @@ nav ul li {
     text-decoration: none;
 }
 
-#menuItems li:first-child {
-    border: none;
-    text-align: right;
-    font-size: 30px;
-}
-
-.hidden {
-    display: none;
-}
-
 .show {
-    display: block;
+    background-color: antiquewhite;
+    font-size: medium;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    
 }
 
 /* Responsive design adjustments */
 @media (min-width: 600px) {
     nav ul li {
         margin-right: 20px;
-    }
-}
-
-/* Additional styles for larger screens */
-@media (min-width: 800px) {
-    nav ul li {
-        display: inline;
     }
 }
 
@@ -111,19 +96,3 @@ nav ul li {
 
     /* Additional styles can be added here */
 }
-
-
-/*  laptop only */
-@media (min-width: 992px) {
-    /* Your CSS rules for desktop */
-    body {
-        font-size: 18px; /* Larger font size for desktop */
-    }
-
-    #menuItems li {
-        padding: 10px 20px; /* Adjust padding for desktop size */
-    }
-
-    /* Additional styles can be added here */
-}
-
