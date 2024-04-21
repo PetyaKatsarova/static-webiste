@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Services - Global Roots</title>
     <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/main-harmonica.css">
 </head>
 <body>
     <header>
@@ -21,16 +22,46 @@
         </nav>
     </header>
     <main>
-        <section id="services" class="title">
+        <!-- <section id="services" class="title">
             <h2>Our Services</h2>
             <p>
                 Integer nec tincidunt nisi. Sed id semper enim. Proin risus erat, fringilla vel purus sit amet, mattis porttitor lectus. Nam non magna a dui elementum aliquet sit amet quis dolor. Curabitur ac enim dignissim, dapibus nisi in, iaculis elit.
             </p>
-        </section>
+        </section> -->
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">What is this website about?</div>
+                <div class="faq-answer">This website is a cool text game. You create a game with the command CreateNewGame and entering the number of rows and columns of the desired gameboard(rooms). You start from a central room. Every room might have a closed chest,
+                monster or the Holy Grail. You can open the chest, which has different items in it or fight a monster. In the chest you could find nothing, a trap, a weapon or gold pieces. You win once you discover the Holy Grail. You loose once you lost all your HitPoints.You loose hit points by
+                fighting a monster or from a trap.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">How do you calculate the score of a completed game?</div>
+                <div class="faq-answer">
+                    <p>For each:</p>
+                    <p>* gold piece are given 50 points</p>
+                    <p>* health point are given 100 points</p>
+                    <p>* opened door you loose 50 points</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What do you show on the score board?</div>
+                <div class="faq-answer">We show the top five games with the highest score</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" id="monster-question">Give me a random monster from your game</div>
+                <div class="faq-answer" id="monster-display"></div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Who can I contact for support?</div>
+                <div class="faq-answer">Please email dungeonCrawlers@hva.nl for any queries.</div>
+            </div>
+        </div>
     </main>
     <footer>
         <p>Copyright © Your Website 2024</p>
     </footer>
     <script src="js/index.js"></script>
+    <script src="js/main-harmonica.js"></script>
 </body>
 </html>
